@@ -1,53 +1,23 @@
 # Windows to Linux cursor converter
 
-![dinosaur](screenshots/dinosau21.png)
-![dinosaur](screenshots/dinosau22.png)
-![dinosaur](screenshots/dinosau23.png)
-![dinosaur](screenshots/dinosau24.png)
-![dinosaur](screenshots/dinosau25.png)
-![dinosaur](screenshots/dinosau26.png)
-![dinosaur](screenshots/dinosaur1.png)
-![dinosaur](screenshots/dinosaur2.png)
-![dinosaur](screenshots/dinosaur3.png)
-![dinosaur](screenshots/dinosaur4.png)
-![dinosaur](screenshots/dinosaur5.png)
-![dinosaur](screenshots/dinosaur6.png)
+This is a fork I made to work for me. The original doesn't even work. Also don't get your hopes up either.
 
-## Depends
+## Dependencies
 
 - ImageMagick
-- Windows Cursors, either `.ani` or `.cur`. (A default dinosaur theme is included)
+- xcursorgen aka xorg-xcursorgen (Arch)
 
-## Build Ani2Ico
+## Prerequisites
 
-```
-cd ani2ico
-make
-```
-
-## Conversion
-
-Input files should be in `inputs/*.ani` and `inputs/*.cur`
+Input files should be in `inputs/*.ani`
 Output files will go to `outputs/CURSORNAME/CURSORNAME*`
+You will be left with a x11 cursor file, a png file and a cfg file for xcursorgen. Can't be bothered to improve this further either c: 
+
+## Usage
 
 ```
 ./convert.sh
 ```
 
-## Usage
-
-Start with a default cursor theme, something like Adwaita
-
-```
-mkdir -p ~/.icons/THEMENAME
-cp /usr/share/icons/Adwaita/cursors ~/.icons/THEMENAME
-```
-
-Replace the cursors you want
-
-```
-cp outputs/CURSORNAME/CURSORNAME ~/.icons/THEMENAME/cursors/CURSOR_TO_REPLACE
-```
-
-You may also have to select the cursor theme.
-In Gnome, this is done using `gnome-tweak-tool`, in `Appearance/Themes/Cursor` select `THEMENAME`.
+## Post-processing
+In short copy an existing cursor theme from `/usr/share/icons/` to `~/.icons` and start moving files from what you have made to that. Is not pretty and cannot really be automated, sorry.
